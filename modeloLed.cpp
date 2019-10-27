@@ -1,22 +1,28 @@
 void setup()
 {
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
   pinMode(10, OUTPUT);
-  pinMode(13, OUTPUT);
-  pinMode(7, OUTPUT);
 }
+
+int arr[] = {100, 200, 800, 300, 100, 500};
+int arr2[] = {8, 9, 10};
+
+int i, o = 0;
 
 void loop()
 {
-  digitalWrite(10, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(10, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(13, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(13, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(7, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(7, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
+
+  i = (rand()% 6);
+
+  digitalWrite(arr2[o], HIGH);
+  delay(250); 
+  digitalWrite(arr2[o], LOW);
+  delay(arr[i]); 
+
+  if ( o == 3 ) {
+    o = 0;
+  } else {
+    o = o + 1;
+  }
 }
